@@ -27,3 +27,24 @@
 */
 
 // Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function countMoney(...notes) {
+    changeElementText("#notes", notes);
+    var currencies = [5, 10, 20, 50, 100, 500, 1000];
+    var totalNotes = 0;
+    for (var n = 0; n < notes.length; n++) {
+        if (currencies.includes(notes[n])) {
+            totalNotes += notes[n];
+        } else {
+            break;
+        }
+    }
+    console.log(totalNotes);
+
+    changeElementText("#totalNotes", totalNotes);
+
+
+}
