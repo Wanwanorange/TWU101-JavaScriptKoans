@@ -4,7 +4,7 @@ $(document).ready(function() {
     kiteGame(100);
 
     // Problem 2
-    isTrafficJam(30, false);
+    isTrafficJam(41, false);
 
     // Problem 3
     fareForRide(6, 8, false);
