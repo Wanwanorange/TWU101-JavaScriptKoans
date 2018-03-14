@@ -34,3 +34,34 @@
  */
 
 // Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function correctUrdu(advertisement) {
+    var textForm = "";
+    var wordCount = 0;
+    for (var pos = 0; pos < advertisement.length; pos ++) {
+        var words = advertisement[pos].join(" ");
+        wordCount += advertisement[pos].length;
+        textForm = textForm.concat(words + "\n");
+    }
+
+    advertisement[1] = correctSecondLine(advertisement[1]);
+    var correctedAdvertisement = createFinalAd(advertisement);
+
+    changeElementText("#advertisement", textForm);
+    changeElementText("#correctedAdvertisement", correctedAdvertisement);
+    changeElementText("#wordCount", wordCount);
+}
+
+function correctSecondLine(line) {
+    line = line.reverse();
+    line = line.join(" ");
+    return line;
+}
+
+function createFinalAd(advertisement) {
+    var mergedAd = [].concat.apply([], advertisement);
+    return mergedAd.join(" ");
+}
